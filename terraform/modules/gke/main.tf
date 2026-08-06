@@ -13,7 +13,6 @@ resource "google_container_cluster" "primary" {
     services_secondary_range_name = var.service_range_name
   }
 
-  # Dynamically apply private cluster settings only if requested
   dynamic "private_cluster_config" {
     for_each = var.enable_private_nodes ? [1] : []
     content {
