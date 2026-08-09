@@ -1,5 +1,5 @@
 provider "google" {
-  project = "canand-a3-202608"
+  project = "cand-a3-202608"
   region  = "europe-west1"
 }
 
@@ -10,14 +10,14 @@ variable "enable_private_nodes" {}
 
 module "vpc" {
   source      = "../../modules/vpc"
-  project_id  = "canand-a3-202608"
+  project_id  = "cand-a3-202608"
   region      = "europe-west1"
   environment = var.environment
 }
 
 module "gke" {
   source               = "../../modules/gke"
-  project_id           = "global-impulse-504612-k0"
+  project_id           = "cand-a3-202608"
   region               = "europe-west1"
   environment          = var.environment
   machine_type         = var.machine_type
